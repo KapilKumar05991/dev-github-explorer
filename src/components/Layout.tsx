@@ -5,6 +5,7 @@ import SearchBar from './SearchBar'
 import Activity from './Activity'
 import { UserContext } from './UserProvider'
 import Button from './Button'
+import Footer from './Footer'
 
 const Layout = () => {
     const { user, setUser } = useContext(UserContext)
@@ -16,19 +17,20 @@ const Layout = () => {
                     setUser({ ...user, theme: user.theme == "Dark" ? "Light" : "Dark" })
                 }}> &#9728;  {user.theme == "Dark" ? "Light" : "Dark"}</Button>
             </div>
-            <h1 className='text-4xl sm:text-5xl mt-8 text-center font-bold'>Developer Github Explorer</h1>
+            <h1 className='text-4xl sm:text-5xl mt-12 text-center font-bold'>Developer Github Explorer</h1>
             <SearchBar />
             {
-                user.error && <div className='text-2xl flex gap-4'><img className='bg-white size-10 rounded-full' src='/src/assets/github.svg' />{user.error}</div>
+                user.error && <div className='text-2xl w-full lg:w-2xl  flex items-center justify-center gap-4'><img className='bg-white size-10 rounded-full' src='/assets/github.svg' />{user.error}</div>
             }
             {
                 user.loading ?
-                    <div className='text-2xl mt-4 animate-ping'><img className='bg-white size-10 rounded-full' src='/src/assets/github.svg' /></div>
+                    <div className='text-2xl mt-4 animate-ping'><img className='bg-white size-10 rounded-full' src='/assets/github.svg' /></div>
                     :
                     user.active && <>
                         <Profile />
                         <Repository />
                         <Activity />
+                        <Footer/>
                     </>
             }
 

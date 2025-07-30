@@ -15,7 +15,7 @@ export default function SearchBar() {
       setUser((user) => ({ ...user, loading: true }))
       let response = await axios.get(`https://api.github.com/users/${input}`)
       const info = response.data
-      response = await axios.get(`https://api.github.com/users/${input}/repos`)
+      response = await axios.get(`https://api.github.com/users/${input}/repos?per_page=100`)
       const repos = response.data
       response = await axios.get(`https://api.github.com/users/${input}/events/public?per_page=10`)
       const events = response.data

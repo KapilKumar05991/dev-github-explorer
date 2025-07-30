@@ -18,7 +18,10 @@ export default function Profile() {
                 <p>{user.info.public_repos} public repos</p>
                 <p>{user.info.public_gists} public gists</p>
                 <p>{user.info.followers} followers &nbsp; | &nbsp; {user.info.following} following</p>
-                <p>{user.info.twitter_username && 'twitter - ' + <a className="link" href={`https://x.com/${user.info.twitter_username}`}>{user.info.twitter_username}</a>}</p>
+                {
+                    user.info.twitter_username &&
+                    <p>twitter -  <a className="link" href={`https://x.com/${user.info.twitter_username}`}>{user.info.twitter_username}</a></p>
+                }
                 <p>{user.info.location && 'location - ' + user.info.location}</p>
             </div>
         </div>
