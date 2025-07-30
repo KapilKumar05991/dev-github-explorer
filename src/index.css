@@ -1,0 +1,23 @@
+@import "tailwindcss";
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  background: white;
+  color: #0d1117;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.dark {
+  @apply bg-[#0d1117] text-[#fff]
+}
+
+
+.link {
+  @apply font-semibold text-blue-500 underline hover:text-blue-600
+}
