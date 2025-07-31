@@ -19,5 +19,5 @@
 
 
 .link {
-  @apply font-semibold text-blue-500 underline hover:text-blue-600
+  @apply font-semibold text-blue-500 underline hover:text-blue-600 break-words
 }
